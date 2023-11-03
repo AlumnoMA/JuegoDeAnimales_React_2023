@@ -1,0 +1,26 @@
+[
+    {"id":"1",
+      "nameEnglish":"zebra",
+      "img":"../public/img/cebra.png"
+    },
+    {"id":"2",
+      "nameEnglish":"cat",
+      "img":"../public/img/gato.png"
+    },
+    {"id":"3",
+      "nameEnglish":"giraffe",
+      "img":"../public/img/jirafa.png"
+    },
+    {"id":"4",
+      "nameEnglish":"lion",
+      "img":"../public/img/leon.png"
+    },
+    {"id":"5",
+      "nameEnglish":"dog",
+      "img":"../public/img/perro.png"
+    },
+    {"id":"6",
+      "nameEnglish":"vac",
+      "img":"../public/img/vaca.png"
+    }
+]
