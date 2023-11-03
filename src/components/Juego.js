@@ -1,3 +1,4 @@
+import animals from '../data/animales.json';
 import React, { useState, useEffect } from 'react';
 
 function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual,setRondaActual }) {
@@ -13,6 +14,13 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual,set
         const animales = ['gato', 'perro', 'vaca', 'leon', 'jirafa', 'cebra'];
         const indiceAleatorio = Math.floor(Math.random() * animales.length);
         return animales[indiceAleatorio];
+    };
+
+    //prueba
+    const animal={
+        "id":"",
+        "nameEnglish":"",
+        "img":"img"
     };
 
     const obtenerOpcionesAleatorias = () => {
@@ -78,6 +86,21 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual,set
             {esCorrecto === true && <p>¡Correcto!</p>}
             {esCorrecto === false && <p>¡Incorrecto!</p>}
             <button onClick={siguienteRonda}>Siguiente</button>
+            {/* pruba */}
+            <row>
+                <CargaDatos sitio={animal}></CargaDatos>
+            </row>
+            <row>
+                {animales.map((animal,i)=>
+                    <atraccion
+                        key={i}
+                        id={animal.id}
+                        nameEnglish={animal.nameEnglish}
+                        img={animal.img}
+                    ></atraccion>
+                )}
+            </row>
+            {/**------------- */}
         </div>
     );
 }
