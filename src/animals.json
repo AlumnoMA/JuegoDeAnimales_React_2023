@@ -1,0 +1,7 @@
+[
+    { "name": "León", "image": "url_del_leon.jpg" },
+    { "name": "Tigre", "image": "url_del_tigre.jpg" },
+    { "name": "Elefante", "image": "url_del_elefante.jpg" },
+    { "name": "Jirafa", "image": "url_de_la_jirafa.jpg" },
+    { "name": "Cebra", "image": "url_de_la_cebra.jpg" }
+]
