@@ -11,7 +11,7 @@ function Start() {
     if (!mostrarJuego) {
         return (
             <div>
-                <h1>Guess animal name game</h1>
+                <h1>Guess the animal game!</h1>
                 <button onClick={playGame}>Play</button>
             </div>
         );
