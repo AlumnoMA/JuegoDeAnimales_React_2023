@@ -1,17 +1,18 @@
 import React from "react";
+import "./style.css";
 
 function Scoreboard({ score, players }) {
     return (
-        <div>
-            <h2>Score:</h2>
-            <ul>
+        <section className="score-container">
+            <h2 className="score-title">Score:</h2>
+            <ul className="score-list">
                 {players.map((player) => (
-                    <li key={player}>
+                    <li className="score-player" key={player}>
                         {player}: {score[player] || 0}
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }
 

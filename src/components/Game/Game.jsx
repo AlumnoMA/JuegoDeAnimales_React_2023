@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import PlayerInput from "./PlayerInput/index.jsx";
-import AnimalImage from "./Animal/index.jsx";
-import Scoreboard from "./Scoreboard";
-import GameOver from "./GameOver";
-import animalsData from "../data/animals.json";
+import "./style.css";
+import PlayerInput from "../PlayerInput/index.jsx";
+import AnimalImage from "../Animal/index.jsx";
+import Scoreboard from "../Scoreboard/index.jsx";
+import GameOver from "../GameOver/index.jsx";
+import animalsData from "../../data/animals.json";
 
 // Determine the maximum number of rounds.
 let maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
-let totalRounds = maxRounds * 2;
+let totalRounds = maxRounds * 2; // Equal number of rounds for the two players
 
 function Game() {
     const [players, setPlayers] = useState([]); // State to store player names.
@@ -17,6 +18,11 @@ function Game() {
     const [currentAnimal, setCurrentAnimal] = useState(null); // The current animal to be guessed.
     const [shuffledOptions, setShuffledOptions] = useState([]); // Shuffled answer options for the current animal.
 
+    const [showResult, setShowResult] = useState(false);
+    const [resultText, setResultText] = useState("");
+    const [buttonsDisabled, setButtonsDisabled] = useState(false);
+
+    // Generate new rounds until the total rounds reaches 0
     useEffect(() => {
         if (roundsPlayed < totalRounds) {
             generateNewRound();
@@ -49,22 +55,29 @@ function Game() {
     // Handle the player's guess.
     const handleGuess = (guess) => {
         let currentScore = score[players[currentPlayerIndex]] || 0;
+        let isCorrect = false;
 
         if (guess.toLowerCase() === currentAnimal.nameEn.toLowerCase()) {
             currentScore += 1;
+            isCorrect = true;
         }
+        setResultText(isCorrect ? "CORRECT!" : "Wrong answear.");
+        setShowResult(true);
+        setButtonsDisabled(true);
 
         setScore({
             ...score,
             [players[currentPlayerIndex]]: currentScore,
         });
-        setRoundsPlayed((prevRoundsPlayed) => prevRoundsPlayed + 1);
+    }
 
-        if (currentPlayerIndex === players.length - 1) {
-            setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
-        } else {
-            setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
-        }
+    // Move to the next round and change the states
+    const handleNextRound = () => {
+        setRoundsPlayed((prevRoundsPlayed) => prevRoundsPlayed + 1);
+        setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+
+        setShowResult(false);
+        setButtonsDisabled(false);
     }
 
     // Start the game with player names.
@@ -86,24 +99,33 @@ function Game() {
     if (roundsPlayed < totalRounds) {
         return (
             <>
-                <h1>Guess the animal game!</h1>
                 {players.length < 2 ? (
                     <PlayerInput onPlayersSet={startGame} />
                 ) : (
                     <>
-                        <h3>Round {parseInt(roundsPlayed / 2)} of {maxRounds}</h3>
-                        <h2>{players[currentPlayerIndex]} turn</h2>
+                        <div className="turn-table">
+                            <h2>Round {parseInt(roundsPlayed / 2)} of {maxRounds}</h2>
+                            <h2>{players[currentPlayerIndex]} turn</h2>
+                        </div>
+
                         {currentAnimal && (
                             <section>
                                 <AnimalImage animal={currentAnimal} onGuess={handleGuess} />
-                                {shuffledOptions.map((option, index) => (
-                                    <div key={index}>
-                                        <button onClick={() => handleGuess(option.nameEn)}>
+                                <div className="buttons">
+                                    {shuffledOptions.map((option, index) => (
+                                        <button className="button" key={index} onClick={() => handleGuess(option.nameEn)} disabled={buttonsDisabled}>
                                             {option.nameEn}
                                         </button>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </section>
+                        )}
+
+                        {showResult && (
+                            <div className="next-round">
+                                <p>{resultText}</p>
+                                <button className="button" onClick={handleNextRound}>Next animal</button>
+                            </div>
                         )}
 
                         <Scoreboard score={score} players={players} />

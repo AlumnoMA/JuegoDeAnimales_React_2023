@@ -1,122 +1,152 @@
 [
   {
     "nameEn": "bear",
+    "nameEs": "oso",
     "img": "img/bear.png"
   },
   {
     "nameEn": "cat",
+    "nameEs": "gato",
     "img": "img/cat.png"
   },
   {
     "nameEn": "bunny",
+    "nameEs": "conejo",
     "img": "img/bunny.png"
   },
   {
     "nameEn": "lion",
+    "nameEs": "león",
     "img": "img/lion.png"
   },
   {
     "nameEn": "dog",
+    "nameEs": "perro",
     "img": "img/dog.png"
   },
   {
     "nameEn": "cow",
+    "nameEs": "vaca",
     "img": "img/cow.png"
   },
   {
     "nameEn": "llama",
+    "nameEs": "llama",
     "img": "img/llama.png"
   },
   {
     "nameEn": "monkey",
+    "nameEs": "mono",
     "img": "img/monkey.png"
   },
   {
     "nameEn": "mouse",
+    "nameEs": "ratón",
     "img": "img/mouse.png"
   },
   {
     "nameEn": "sheep",
+    "nameEs": "oveja",
     "img": "img/sheep.png"
   },
   {
     "nameEn": "snake",
+    "nameEs": "serpiente",
     "img": "img/snake.png"
   },
   {
     "nameEn": "owl",
+    "nameEs": "búho",
     "img": "img/owl.png"
   },
   {
     "nameEn": "frog",
+    "nameEs": "sapo",
     "img": "img/frog.png"
   },
   {
     "nameEn": "bull",
+    "nameEs": "toro",
     "img": "img/bull.png"
   },
   {
     "nameEn": "chicken",
+    "nameEs": "gallina",
     "img": "img/chicken.png"
   },
   {
     "nameEn": "deer",
+    "nameEs": "ciervo",
     "img": "img/deer.png"
   },
   {
     "nameEn": "donkey",
+    "nameEs": "burro",
     "img": "img/donkey.png"
   },
   {
     "nameEn": "duck",
+    "nameEs": "pato",
     "img": "img/duck.png"
   },
   {
     "nameEn": "fox",
+    "nameEs": "zorro",
     "img": "img/fox.png"
   },
   {
     "nameEn": "goat",
+    "nameEs": "cabra",
     "img": "img/goat.png"
   },
   {
     "nameEn": "goose",
+    "nameEs": "ganso",
     "img": "img/goose.png"
   },
   {
     "nameEn": "hog",
+    "nameEs": "jabalí",
     "img": "img/hog.png"
   },
   {
     "nameEn": "horse",
+    "nameEs": "caballo",
     "img": "img/horse.png"
   },
   {
     "nameEn": "pig",
+    "nameEs": "cerdo",
     "img": "img/pig.png"
   },
   {
     "nameEn": "raccon",
+    "nameEs": "mapache",
     "img": "img/raccon.png"
   },
   {
-    "nameEn": "rhea",
-    "img": "img/rhea.png"
+    "nameEn": "ostrich",
+    "nameEs": "avestruz",
+    "img": "img/ostrich.png"
   },
   {
     "nameEn": "squirrel",
+    "nameEs": "ardilla",
     "img": "img/squirrel.png"
   },
   {
     "nameEn": "tiger",
+    "nameEs": "tigre",
     "img": "img/tiger.png"
   },
   {
     "nameEn": "turtle",
+    "nameEs": "tortuga",
     "img": "img/turtle.png"
   },
   {
     "nameEn": "wolf",
+    "nameEs": "lobo",
     "img": "img/wolf.png"
   }
 ]

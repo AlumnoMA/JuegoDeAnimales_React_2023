@@ -9,4 +9,21 @@
 
 body {
     padding: 2rem;
+    height: 100vh;
+    width: 100%;
+}
+
+#title-game {
+    width: max-content;
+    margin-inline: auto;
+    text-align: center;
+    background-color: #0b0b0b;
+    color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.button {
+    font-size: 2rem;
+    padding: 1rem;
 }

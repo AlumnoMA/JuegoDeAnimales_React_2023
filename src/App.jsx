@@ -3,7 +3,10 @@ import "./App.css"
 
 function App() {
     return (
-        <Start />
+        <>
+            <h1 id="title-game">Guess the animal game!</h1>
+            <Start />
+        </>
     );
 };
 
