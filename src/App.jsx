@@ -1,4 +1,5 @@
 import Start from "./components/Start";
+import "./App.css"
 
 function App() {
     return (

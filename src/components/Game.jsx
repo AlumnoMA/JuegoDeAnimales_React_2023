@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import PlayerInput from "./PlayerInput";
-import AnimalImage from "./AnimalImage";
+import PlayerInput from "./PlayerInput/index.jsx";
+import AnimalImage from "./Animal/index.jsx";
 import Scoreboard from "./Scoreboard";
 import GameOver from "./GameOver";
-import animalsData from "../animals.json";
+import animalsData from "../data/animals.json";
 
 // Determine the maximum number of rounds.
-let maxRounds = Math.floor(Math.random() * 6) + 3;
+let maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
+let totalRounds = maxRounds * 2;
 
 function Game() {
     const [players, setPlayers] = useState([]); // State to store player names.
@@ -15,13 +16,13 @@ function Game() {
     const [roundsPlayed, setRoundsPlayed] = useState(0); // Number of rounds played.
     const [currentAnimal, setCurrentAnimal] = useState(null); // The current animal to be guessed.
     const [shuffledOptions, setShuffledOptions] = useState([]); // Shuffled answer options for the current animal.
-    const [gameResult, setGameResult] = useState(null);
 
     useEffect(() => {
-        if (roundsPlayed < maxRounds) {
+        if (roundsPlayed < totalRounds) {
             generateNewRound();
         }
     }, [roundsPlayed]);
+
     // Generate a new round of the game.
     const generateNewRound = () => {
         let correctAnimal = getRandomAnimal();
@@ -49,7 +50,7 @@ function Game() {
     const handleGuess = (guess) => {
         let currentScore = score[players[currentPlayerIndex]] || 0;
 
-        if (guess.toLowerCase() === currentAnimal.name.toLowerCase()) {
+        if (guess.toLowerCase() === currentAnimal.nameEn.toLowerCase()) {
             currentScore += 1;
         }
 
@@ -79,10 +80,10 @@ function Game() {
         setCurrentAnimal(null);
         setShuffledOptions([]);
         setPlayers([]);
-        maxRounds = Math.floor(Math.random() * 6) + 3;
+        maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
     };
 
-    if (roundsPlayed < maxRounds) {
+    if (roundsPlayed < totalRounds) {
         return (
             <>
                 <h1>Guess the animal game!</h1>
@@ -90,14 +91,15 @@ function Game() {
                     <PlayerInput onPlayersSet={startGame} />
                 ) : (
                     <>
+                        <h3>Round {parseInt(roundsPlayed / 2)} of {maxRounds}</h3>
                         <h2>{players[currentPlayerIndex]} turn</h2>
                         {currentAnimal && (
                             <section>
                                 <AnimalImage animal={currentAnimal} onGuess={handleGuess} />
                                 {shuffledOptions.map((option, index) => (
                                     <div key={index}>
-                                        <button onClick={() => handleGuess(option.name)}>
-                                            {option.name}
+                                        <button onClick={() => handleGuess(option.nameEn)}>
+                                            {option.nameEn}
                                         </button>
                                     </div>
                                 ))}
