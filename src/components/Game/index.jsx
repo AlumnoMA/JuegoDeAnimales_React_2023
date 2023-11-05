@@ -135,7 +135,7 @@ function Game() {
         );
     } else {
         return <GameOver score={score} players={players} onRestart={restartGame} />;
-    }
-}
+    };
+};
 
 export default Game;

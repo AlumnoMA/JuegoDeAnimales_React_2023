@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Game from './Game/Game';
+import Game from './Game';
 
 function Start() {
     const [mostrarJuego, setMostrarJuego] = useState(false);
@@ -10,7 +10,9 @@ function Start() {
 
     if (!mostrarJuego) {
         return (
-            <button onClick={playGame}>Play</button>
+            <div className='start-container'>
+                <button className='start-button' onClick={playGame}>Play</button>
+            </div>
         );
     } else {
         return <Game />

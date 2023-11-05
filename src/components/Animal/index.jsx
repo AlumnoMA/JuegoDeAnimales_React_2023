@@ -9,6 +9,6 @@ function AnimalImage({ animal }) {
             <img src={animal.img} alt={animal.nameEn} />
         </div>
     );
-}
+};
 
 export default AnimalImage;

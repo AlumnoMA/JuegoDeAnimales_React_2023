@@ -14,6 +14,6 @@ function Scoreboard({ score, players }) {
             </ul>
         </section>
     );
-}
+};
 
 export default Scoreboard;

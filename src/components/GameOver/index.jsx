@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 import Scoreboard from "../Scoreboard";
 
 function GameOver({ score, players, onRestart }) {
@@ -20,8 +21,8 @@ function GameOver({ score, players, onRestart }) {
     const highestScoringPlayer = findPlayerWithHighestScore(score);
 
     return (
-        <div>
-            <h2>Game Over</h2>
+        <section className="game-over-container">
+            <h2 className="subtitle">Game Over</h2>
             <Scoreboard score={score} players={players} />
 
             {highestScoringPlayer && (
@@ -30,9 +31,9 @@ function GameOver({ score, players, onRestart }) {
                 </div>
             )}
 
-            <button onClick={onRestart}>Restart</button>
-        </div>
+            <button className="button" onClick={onRestart}>Restart</button>
+        </section>
     );
-}
+};
 
 export default GameOver;

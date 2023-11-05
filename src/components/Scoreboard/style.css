@@ -1,5 +1,6 @@
 .score-container {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 5%;
+    font-size: 2rem;
 }
