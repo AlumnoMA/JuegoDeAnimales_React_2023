@@ -1,0 +1,13 @@
+.img-container {
+    width: 300px;
+    background-color: aqua;
+    margin-inline: auto;
+    margin-block: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+    border: 3px solid aquamarine;
+}
