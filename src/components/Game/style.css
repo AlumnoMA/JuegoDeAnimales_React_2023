@@ -54,3 +54,41 @@
     margin-inline: auto;
     text-align: center;
 }
+
+.correct-answer {
+    color: #95d5b2;
+    animation: correct 2s infinite;
+}
+
+.incorrect-answer {
+    color: crimson;
+    animation: incorrect 1s infinite;
+}
+
+@keyframes correct {
+    0% {
+        color: #95D5B2;
+    }
+
+    50% {
+        color: #52B788;
+    }
+
+    100% {
+        color: #95D5B2;
+    }
+}
+
+@keyframes incorrect {
+    0% {
+        color: #ee6055;
+    }
+
+    50% {
+        color: #bc4b51;
+    }
+
+    100% {
+        color: #ee6055;
+    }
+}

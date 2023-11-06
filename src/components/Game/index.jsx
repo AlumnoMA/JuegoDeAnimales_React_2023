@@ -62,7 +62,7 @@ function Game() {
             currentScore += 1;
             isCorrect = true;
         }
-        setResultText(isCorrect ? "CORRECT!" : "Wrong answear.");
+        setResultText(isCorrect ? "CORRECT!" : "Wrong answear");
         setShowResult(true);
         setButtonsDisabled(true);
 
@@ -124,7 +124,7 @@ function Game() {
 
                         {showResult && (
                             <div className="next-round">
-                                <p>{resultText}</p>
+                                <p className={resultText === "CORRECT!" ? "correct-answer" : "incorrect-answer"}>{resultText}</p>
                                 <button className="button next-animal" onClick={handleNextRound}>Next animal</button>
                             </div>
                         )}
