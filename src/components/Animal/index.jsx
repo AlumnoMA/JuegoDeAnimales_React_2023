@@ -4,9 +4,9 @@ import "./style.css";
 function AnimalImage({ animal }) {
 
     return (
-        <div className="img-container">
+        <div className="animal-container">
             <h3>What animal is this?:</h3>
-            <img src={animal.img} alt={animal.nameEn} />
+            <img className="animal-img" src={animal.img} alt={animal.nameEn} />
         </div>
     );
 };

@@ -8,7 +8,6 @@ import animalsData from "../../data/animals.json";
 
 // Determine the maximum number of rounds.
 let maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
-let totalRounds = maxRounds * 2; // Equal number of rounds for the two players
 
 function Game() {
     const [players, setPlayers] = useState([]); // State to store player names.
@@ -21,6 +20,8 @@ function Game() {
     const [showResult, setShowResult] = useState(false);
     const [resultText, setResultText] = useState("");
     const [buttonsDisabled, setButtonsDisabled] = useState(false);
+
+    let totalRounds = maxRounds * 2; // Equal number of rounds for the two players
 
     // Generate new rounds until the total rounds reaches 0
     useEffect(() => {
@@ -105,7 +106,7 @@ function Game() {
                     <>
                         <div className="turn-table">
                             <h2>Round {parseInt(roundsPlayed / 2)} of {maxRounds}</h2>
-                            <h2>{players[currentPlayerIndex]} turn</h2>
+                            <h2 className="player-turn">{players[currentPlayerIndex]} turn</h2>
                         </div>
 
                         {currentAnimal && (
@@ -113,7 +114,7 @@ function Game() {
                                 <AnimalImage animal={currentAnimal} onGuess={handleGuess} />
                                 <div className="buttons">
                                     {shuffledOptions.map((option, index) => (
-                                        <button className="button" key={index} onClick={() => handleGuess(option.nameEn)} disabled={buttonsDisabled}>
+                                        <button className="button option-button" key={index} onClick={() => handleGuess(option.nameEn)} disabled={buttonsDisabled}>
                                             {option.nameEn}
                                         </button>
                                     ))}
@@ -124,7 +125,7 @@ function Game() {
                         {showResult && (
                             <div className="next-round">
                                 <p>{resultText}</p>
-                                <button className="button" onClick={handleNextRound}>Next animal</button>
+                                <button className="button next-animal" onClick={handleNextRound}>Next animal</button>
                             </div>
                         )}
 

@@ -27,7 +27,7 @@ function GameOver({ score, players, onRestart }) {
 
             {highestScoringPlayer && (
                 <div>
-                    <p>Player with highest score: {highestScoringPlayer}</p>
+                    <p className="higher-score">Player with highest score: <span>{highestScoringPlayer}</span></p>
                 </div>
             )}
 
