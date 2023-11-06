@@ -11,7 +11,7 @@ function Start() {
     if (!mostrarJuego) {
         return (
             <div className='start-container'>
-                <button className='start-button' onClick={playGame}>Play</button>
+                <button className='play-button button' onClick={playGame}>Play</button>
             </div>
         );
     } else {

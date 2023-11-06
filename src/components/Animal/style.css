@@ -1,13 +1,20 @@
-.img-container {
-    width: 300px;
-    background-color: aqua;
+.animal-container {
+    width: 500px;
     margin-inline: auto;
-    margin-block: 2rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
     align-items: center;
+    color: #d8f3dc;
+    font-size: 2rem;
+}
+
+.animal-img {
+    margin-block: .5rem;
+    padding: .5rem 2rem;
     border-radius: 15%;
-    border: 3px solid aquamarine;
+    background-color: #52b788;
+    border: 3px solid #d8f3dc;
 }
