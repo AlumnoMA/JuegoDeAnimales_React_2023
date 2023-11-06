@@ -52,12 +52,14 @@ body {
     font-size: 3rem !important;
     padding: 1rem !important;
     margin-inline: auto;
+    animation: breathing .8s infinite;
 }
 
 .start-button:disabled {
     background-color: #52b788;
     color: #52b788;
     border: none;
+    animation: none;
 }
 
 .start-button:disabled:hover {
@@ -90,4 +92,26 @@ body {
 
 .subtitle {
     font-size: 3rem;
+}
+
+.animal-img {
+    animation: breathing 5s infinite;
+}
+
+.next-round > button, .play-button {
+    animation: breathing .8s infinite;
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
