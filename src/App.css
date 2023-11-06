@@ -98,8 +98,13 @@ body {
     animation: breathing 5s infinite;
 }
 
-.next-round > button, .play-button {
+.next-round>button,
+.play-button {
     animation: breathing .8s infinite;
+}
+
+.player-turn {
+    animation: breathing2 .8s infinite;
 }
 
 @keyframes breathing {
@@ -109,6 +114,21 @@ body {
 
     50% {
         transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes breathing2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        color: #52b788;
     }
 
     100% {
